@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Shivani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3366;
+            margin-top: 20px;
+        }
+        .heart {
+            font-size: 50px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heart">💖 SORRY SHIVANI 💖</h1>
+    <div class="message" id="message"></div>
+    <script>
+        const lines = [
+            "S - Sincere Apologies, Shivani!",
+            "O - Only thinking about making you smile!",
+            "R - Really didn't mean to upset you!",
+            "R - Ready to do anything to make it up!",
+            "Y - You mean a lot to me!",
+            "Hope you forgive me! 🙏💞"
+        ];
+        
+        let index = 0;
+        function showMessage() {
+            if (index < lines.length) {
+                document.getElementById("message").innerHTML += `<p>${lines[index]}</p>`;
+                index++;
+                setTimeout(showMessage, 1000);
+            }
+        }
+        
+        setTimeout(showMessage, 1000);
+    </script>
+</body>
+</html>
